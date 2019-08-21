@@ -2,6 +2,10 @@
   <aside id="notice"><%= notice %></aside>
 <% end %>
 
+<% if session[:counter] %>
+  <span>Viewed <%= pluralize(session[:counter], "time") %> (since you last added an item to your cart)</span>
+<% end %>
+
 <h1>Your Pragmatic Catalog</h1>
 <ul class="catalog">
   <% cache @products do %>
