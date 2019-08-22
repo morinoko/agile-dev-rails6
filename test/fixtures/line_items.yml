@@ -3,7 +3,9 @@
 one:
   product: two
   cart: one
+  price: 20.00
 
 two:
   product: two
   cart: two
+  price: 20.00
