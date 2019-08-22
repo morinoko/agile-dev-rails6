@@ -24,8 +24,11 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show cart" do
-    get cart_url(@cart)
-    assert_response :success
+      # not working because session isn't working??
+      # get store_index_url
+      # session[:cart_id] = @cart.id
+      get cart_url(@cart)
+      assert_response :success
   end
 
   test "should get edit" do
@@ -39,7 +42,7 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy cart" do
-    post line_items_url, params: { product_id: product(:ruby).id }
+    post line_items_url, params: { product_id: products(:ruby).id }
     @cart = Cart.find(session[:cart_id])
 
     assert_difference('Cart.count', -1) do
