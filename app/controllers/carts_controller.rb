@@ -11,6 +11,7 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+    redirect_to store_index_url, notice: "You aren't permitted to see this cart" unless session[:cart_id] == @cart.id
   end
 
   # GET /carts/new
