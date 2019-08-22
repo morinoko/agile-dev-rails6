@@ -3,9 +3,11 @@
 one:
   product: two
   cart: one
+  order: one
   price: 20.00
 
 two:
-  product: two
+  product: ruby
   cart: two
+  order: one
   price: 20.00
