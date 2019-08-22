@@ -24,9 +24,6 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show cart" do
-      # not working because session isn't working??
-      # get store_index_url
-      # session[:cart_id] = @cart.id
       get cart_url(@cart)
       assert_response :success
   end
