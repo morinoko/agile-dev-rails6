@@ -20,7 +20,7 @@
                   data: { confirm: 'Are you sure?' },
                   remote: true %>
 
-    <%= button_to t('.checkout'), new_order_path,
+    <%= button_to t('.checkout'), new_order_path(locale: I18n.locale),
                   method: :get,
                   class: "checkout" %>
   </div>
