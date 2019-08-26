@@ -2,7 +2,8 @@
   <% @support_requests.each do |support_request| %>
     <li>
       <h1>
-        On <%= support_request.created_at.to_formatted_s(:long) %> <code><%= support_request.email %></code> writes:
+        On <%= support_request.created_at.to_formatted_s(:long) %>
+        <code><%= support_request.email %></code> writes:
       </h1>
       <p>
         <blockquote>
@@ -39,6 +40,25 @@
         </dl>
       <% else %>
         <h3 class="notice">No associated order</h3>
+      <% end %>
+
+      <% if support_request.response.blank? %>
+        <%= form_with(model: support_request, local: true, class: "depot_form") do |form| %>
+          <div class="field">
+            <%= form.label :response, "Write Response" %>
+            <%= form.rich_text_area :response, id: :support_request_response %>
+          </div>
+          <div class="actions">
+            <%= form.submit "Send Response" %>
+          </div>
+        <% end %>
+      <% else %>
+        <h4>Our response:</h4>
+        <p>
+          <blockquote>
+            <%= support_request.response %>
+          </blockquote>
+        </p>
       <% end %>
       <hr>
     </li>
