@@ -98,6 +98,27 @@ header.main {
   }
 }
 
+nav.logged_in_nav {
+  border-top: solid thin #bfb;
+  padding: 0.354em 0;
+  margin-top: 0.354em;
+  input[type="submit"] {
+    // Make the logout button look like a
+    // link, so it matches the nav style
+    background: none;
+    border: none;
+    color: #bfb;
+    font-size: 1em;
+    letter-spacing: 0.354em;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+  input[type="submit"]:hover {
+    color: white;
+  }
+}
+
 .notice, #notice {
   background: #ffb;
   border-radius: 0.5em;
@@ -185,3 +206,5 @@ header.main {
     }
   }
 }
+
+
