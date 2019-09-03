@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   resources :support_requests, only: [:index, :update]
 
   scope '(:locale)' do
+    # QR code test page
+    get 'qr-code' => 'qr_codes#index'
+
     resources :orders
     resources :line_items
     resources :carts
