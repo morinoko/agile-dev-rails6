@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # PWA routes
+  get '/service_worker.js' => 'service_worker#service_worker'
+  get '/manifest.json' => 'service_worker#manifest'
+  
   get 'admin' => 'admin#index'
 
   controller :sessions do
@@ -20,9 +24,5 @@ Rails.application.routes.draw do
     resources :carts
     root 'store#index', as: 'store_index', via: :all
   end
-
-  # PWA routes
-  get '/service_worker.js' => 'service_worker#service_worker'
-  get '/manifest.json' => 'service_worker#manifest'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
