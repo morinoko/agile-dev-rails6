@@ -92,6 +92,17 @@ header.main {
         }
       }
     }
+
+    .a2hs-prompt {
+      color: #7c132f;
+      cursor: pointer;
+      margin: .5em;
+      padding: 1em .5em;
+      background: white;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+    }
   }
   main {
     padding: 0.5em;
