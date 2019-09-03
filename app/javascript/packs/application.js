@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("packs/locale_switcher")
+require("packs/service_worker_register")
 
 // I18n setup
 window.I18n = require("../../../public/javascripts/i18n")
